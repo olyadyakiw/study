@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { Sky } from 'three/addons/objects/Sky.js'
 import { Timer } from 'three/addons/misc/Timer.js'
 import GUI from 'lil-gui'
 
@@ -18,11 +19,11 @@ const scene = new THREE.Scene()
 // Textures
 const textureLoader = new THREE.TextureLoader()
 
-const floorAlphaTexture = textureLoader.load('./floor/alpha.jpg')
-const floorColorTexture = textureLoader.load('./floor/coast_sand_rocks_02_diff_2k.jpg')
-const floorARMTexture = textureLoader.load('./floor/coast_sand_rocks_02_arm_2k.jpg')
-const floorNormalTexture = textureLoader.load('./floor/coast_sand_rocks_02_nor_gl_2k.jpg')
-const floorDisplacementTexture = textureLoader.load('./floor/coast_sand_rocks_02_disp_2k.jpg')
+const floorAlphaTexture = textureLoader.load('./floor/alpha.webp')
+const floorColorTexture = textureLoader.load('./floor/coast_sand_rocks_02_diff_2k.webp')
+const floorARMTexture = textureLoader.load('./floor/coast_sand_rocks_02_arm_2k.webp')
+const floorNormalTexture = textureLoader.load('./floor/coast_sand_rocks_02_nor_gl_2k.webp')
+const floorDisplacementTexture = textureLoader.load('./floor/coast_sand_rocks_02_disp_2k.webp')
 
 floorColorTexture.colorSpace = THREE.SRGBColorSpace
 floorColorTexture.repeat.set(8,8)
@@ -42,17 +43,17 @@ floorDisplacementTexture.wrapS = THREE.RepeatWrapping
 floorDisplacementTexture.wrapT = THREE.RepeatWrapping
 
 // Wall Textures
-const wallNormalTexture = textureLoader.load('./wall/castle_brick_broken_06_nor_gl_1k.jpg')
-const wallARMTexture = textureLoader.load('./wall/castle_brick_broken_06_arm_1k.jpg')
-const wallColorTexture = textureLoader.load('./wall/castle_brick_broken_06_diff_1k.jpg')
+const wallNormalTexture = textureLoader.load('./wall/castle_brick_broken_06_nor_gl_1k.webp')
+const wallARMTexture = textureLoader.load('./wall/castle_brick_broken_06_arm_1k.webp')
+const wallColorTexture = textureLoader.load('./wall/castle_brick_broken_06_diff_1k.webp')
 
 wallColorTexture.colorSpace = THREE.SRGBColorSpace
 
 // Roof Textures
 
-const roofNormalTexture = textureLoader.load('./roof/roof_slates_02_nor_gl_1k.jpg')
-const roofARMTexture = textureLoader.load('./roof/roof_slates_02_arm_1k.jpg')
-const roofColorTexture = textureLoader.load('./roof/roof_slates_02_diff_1k.jpg')
+const roofNormalTexture = textureLoader.load('./roof/roof_slates_02_nor_gl_1k.webp')
+const roofARMTexture = textureLoader.load('./roof/roof_slates_02_arm_1k.webp')
+const roofColorTexture = textureLoader.load('./roof/roof_slates_02_diff_1k.webp')
 
 roofColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -65,9 +66,9 @@ roofNormalTexture.wrapS = THREE.RepeatWrapping
 
 // Bush Textures
 
-const bushNormalTexture = textureLoader.load('./bush/leaves_forest_ground_nor_gl_1k.jpg')
-const bushARMTexture = textureLoader.load('./bush/leaves_forest_ground_arm_1k.jpg')
-const bushColorTexture = textureLoader.load('./bush/leaves_forest_ground_diff_1k.jpg')
+const bushNormalTexture = textureLoader.load('./bush/leaves_forest_ground_nor_gl_1k.webp')
+const bushARMTexture = textureLoader.load('./bush/leaves_forest_ground_arm_1k.webp')
+const bushColorTexture = textureLoader.load('./bush/leaves_forest_ground_diff_1k.webp')
 
 bushColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -80,9 +81,9 @@ bushNormalTexture.wrapS = THREE.RepeatWrapping
 
 // Grave
 
-const graveNormalTexture = textureLoader.load('./grave/plastered_stone_wall_nor_gl_1k.jpg')
-const graveARMTexture = textureLoader.load('./grave/plastered_stone_wall_arm_1k.jpg')
-const graveColorTexture = textureLoader.load('./grave/plastered_stone_wall_diff_1k.jpg')
+const graveNormalTexture = textureLoader.load('./grave/plastered_stone_wall_nor_gl_1k.webp')
+const graveARMTexture = textureLoader.load('./grave/plastered_stone_wall_arm_1k.webp')
+const graveColorTexture = textureLoader.load('./grave/plastered_stone_wall_diff_1k.webp')
 
 graveColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -91,13 +92,13 @@ graveARMTexture.repeat.set(0.3,0.4)
 graveNormalTexture.repeat.set(0.3,0.4)
 
 // Door
-const doorAlphaTexture = textureLoader.load('./door/alpha.jpg')
-const doorHeightTexture = textureLoader.load('./door/height.jpg')
-const doorColorTexture = textureLoader.load('./door/color.jpg')
-const doorNormalTexture = textureLoader.load('./door/normal.jpg')
-const doorAmbientOcclusionTexture = textureLoader.load('./door/ambientOcclusion.jpg')
-const doorMetalnessTexture = textureLoader.load('./door/metalness.jpg')
-const doorRoughnessTexture = textureLoader.load('./door/roughness.jpg')
+const doorAlphaTexture = textureLoader.load('./door/alpha.webp')
+const doorHeightTexture = textureLoader.load('./door/height.webp')
+const doorColorTexture = textureLoader.load('./door/color.webp')
+const doorNormalTexture = textureLoader.load('./door/normal.webp')
+const doorAmbientOcclusionTexture = textureLoader.load('./door/ambientOcclusion.webp')
+const doorMetalnessTexture = textureLoader.load('./door/metalness.webp')
+const doorRoughnessTexture = textureLoader.load('./door/roughness.webp')
 
 doorColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -246,13 +247,25 @@ for(let i = 0; i < 30; i++) {
  * Lights
  */
 // Ambient light
-const ambientLight = new THREE.AmbientLight('#ffffff', 0.5)
+const ambientLight = new THREE.AmbientLight('#86cdff', 0.275)
 scene.add(ambientLight)
 
 // Directional light
-const directionalLight = new THREE.DirectionalLight('#ffffff', 1.5)
+const directionalLight = new THREE.DirectionalLight('#86cdff', 1)
 directionalLight.position.set(3, 2, -8)
 scene.add(directionalLight)
+
+// Door Light
+const doorLight = new THREE.PointLight('#ff7d46',5)
+house.add(doorLight)
+doorLight.position.set(0,2.2,2.5)
+
+// Ghosts
+const ghost1 = new THREE.PointLight('#8800ff', 6)
+const ghost2 = new THREE.PointLight('#ff0088', 6)
+const ghost3 = new THREE.PointLight('#ff0000', 6)
+
+scene.add(ghost1,ghost2,ghost3)
 
 /**
  * Sizes
@@ -300,6 +313,62 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+// Shadows
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
+// Cast and recieve
+directionalLight.castShadow = true
+ghost1.castShadow = true
+ghost2.castShadow = true
+ghost3.castShadow = true
+
+walls.castShadow = true
+walls.receiveShadow = true
+roof.castShadow = true
+floor.receiveShadowShadow = true
+
+for(const grave of graves.children) {
+    grave.castShadow = true
+    grave.receiveShadow = true
+}
+
+// Mapping
+
+directionalLight.shadow.mapSize.width = 256
+directionalLight.shadow.mapSize.height = 256
+directionalLight.shadow.camera.top = 8
+directionalLight.shadow.camera.right = 8
+directionalLight.shadow.camera.left = -8
+directionalLight.shadow.camera.bottom = -8
+directionalLight.shadow.camera.near = 1
+directionalLight.shadow.camera.far = 20
+
+ghost1.shadow.mapSize.width = 256
+ghost1.shadow.mapSize.height = 256
+ghost1.shadow.camera.far = 10
+ghost2.shadow.mapSize.width = 256
+ghost2.shadow.mapSize.height = 256
+ghost2.shadow.camera.far = 10
+ghost3.shadow.mapSize.width = 256
+ghost3.shadow.mapSize.height = 256
+ghost3.shadow.camera.far = 10
+
+// Sky 
+const sky = new Sky()
+sky.scale.set(100,100,100)
+scene.add(sky)
+
+sky.material.uniforms['turbidity'].value = 10
+sky.material.uniforms['rayleigh'].value = 3
+sky.material.uniforms['mieCoefficient'].value = 0.1
+sky.material.uniforms['mieDirectionalG'].value = 0.95
+sky.material.uniforms['sunPosition'].value.set(0.3, -0.038, -0.95)
+
+// Fog
+
+scene.fog = new THREE.FogExp2('#04343f', 0.1)
+
 /**
  * Animate
  */
@@ -310,6 +379,22 @@ const tick = () =>
     // Timer
     timer.update()
     const elapsedTime = timer.getElapsed()
+
+    // Ghost
+    const ghost1Angle = elapsedTime * 0.5
+    ghost1.position.x = Math.cos(ghost1Angle) * 4
+    ghost1.position.z = Math.sin(ghost1Angle) * 4
+    ghost1.position.y = Math.sin(ghost1Angle) * Math.sin(ghost1Angle * 2.34) * Math.sin(ghost1Angle * 3.45)
+
+    const ghost2Angle = - elapsedTime * 0.38
+    ghost2.position.x = Math.cos(ghost2Angle) * 5
+    ghost2.position.z = Math.sin(ghost2Angle) * 5
+    ghost2.position.y = Math.sin(ghost2Angle) * Math.sin(ghost2Angle * 2.34) * Math.sin(ghost2Angle * 3.45)
+
+    const ghost3Angle = elapsedTime * 0.23
+    ghost3.position.x = Math.cos(ghost3Angle) * 6
+    ghost3.position.z = Math.sin(ghost3Angle) * 6
+    ghost3.position.y = Math.sin(ghost3Angle) * Math.sin(ghost3Angle * 2.34) * Math.sin(ghost3Angle * 3.45)
 
     // Update controls
     controls.update()
