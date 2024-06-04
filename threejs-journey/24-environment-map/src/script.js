@@ -4,6 +4,7 @@ import GUI from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'
 import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js'
+import { GroundProjectedSkybox } from 'three/examples/jsm/objects/GroundProjectedSkybox.js'
 
 // Loaders
 
@@ -11,6 +12,8 @@ const gltfLoader = new GLTFLoader()
 const cubeTextureLoader = new THREE.CubeTextureLoader()
 const rgbeLoader = new RGBELoader()
 const exrLoader = new EXRLoader()
+const textureLoader = new THREE.TextureLoader()
+
 
 /**
  * Base
@@ -57,7 +60,7 @@ gui.add(global, 'envMapIntensity').min(0).max(10).step(0.001).onChange(updateAll
 // scene.environment = enviromentMap
 // scene.background = enviromentMap
 
-// HDR RGBE
+// // HDR RGBE
 // rgbeLoader.load('./environmentMaps/blender-2k.hdr', (enviromentMap) => {
 //     enviromentMap.mapping = THREE.EquirectangularReflectionMapping
 //     console.log(enviromentMap)
@@ -65,14 +68,74 @@ gui.add(global, 'envMapIntensity').min(0).max(10).step(0.001).onChange(updateAll
 //     scene.environment = enviromentMap
 // })
 
-// HDR EXR
-exrLoader.load('./environmentMaps/nvidiaCanvas-4k.exr', (enviromentMap) => {
-    enviromentMap.mapping = THREE.EquirectangularReflectionMapping
-    console.log(enviromentMap)
-    scene.background = enviromentMap
-    scene.environment = enviromentMap
-})
+// rgbeLoader.load('./environmentMaps/2/2k.hdr', (enviromentMap) => {
+//     enviromentMap.mapping = THREE.EquirectangularReflectionMapping
+//     console.log(enviromentMap)
+//     scene.background = enviromentMap
+//     scene.environment = enviromentMap
+// })
 
+// HDR EXR
+// exrLoader.load('./environmentMaps/nvidiaCanvas-4k.exr', (enviromentMap) => {
+//     enviromentMap.mapping = THREE.EquirectangularReflectionMapping
+//     console.log(enviromentMap)
+//     scene.background = enviromentMap
+//     scene.environment = enviromentMap
+// })
+
+// LDR
+
+// const enviromentMap = textureLoader.load('./environmentMaps/blockadesLabsSkybox/anime_art_style_japan_streets_with_cherry_blossom_.jpg')
+// enviromentMap.mapping = THREE.EquirectangularReflectionMapping
+// enviromentMap.colorSpace = THREE.SRGBColorSpace
+
+// scene.background = enviromentMap
+// scene.environment = enviromentMap
+
+// Ground Projected Skybox
+// rgbeLoader.load('./environmentMaps/2/2k.hdr', (enviromentMap) => {
+//     enviromentMap.mapping = THREE.EquirectangularReflectionMapping
+//     scene.environment = enviromentMap
+//     // Skybox
+//     const skybox = new GroundProjectedSkybox(enviromentMap)
+//     skybox.scale.set(50,50,50)
+//     skybox.radius = 120
+//     skybox.height = 11
+//     scene.add(skybox)
+
+//     gui.add(skybox, 'radius', 1, 200, 0.01).name('skyboxRadius')
+//     gui.add(skybox, 'height', 1, 100, 0.01).name('skyboxHeight')
+// })
+
+// /////// Real-time enviroment map
+
+const environmentMap = textureLoader.load('/environmentMaps/blockadesLabsSkybox/interior_views_cozy_wood_cabin_with_cauldron_and_p.jpg')
+environmentMap.mapping = THREE.EquirectangularReflectionMapping
+environmentMap.colorSpace = THREE.SRGBColorSpace
+
+scene.background = environmentMap
+
+// Holy donut
+const holyDonut = new THREE.Mesh(
+    new THREE.TorusGeometry(8, 0.5),
+    new THREE.MeshBasicMaterial({ color: new THREE.Color(10,4,2) })
+)
+holyDonut.position.y = 3.5
+holyDonut.layers.enable(1)
+scene.add(holyDonut)
+
+// Cube render target
+const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(
+    256,
+    {
+        type: THREE.FloatType
+    }
+)
+
+scene.environment = cubeRenderTarget.texture
+
+const cubeCamera = new THREE.CubeCamera(0.1, 100, cubeRenderTarget)
+cubeCamera.layers.set(1)
 /**
  * Torus Knot
  */
@@ -147,6 +210,13 @@ const tick = () =>
 {
     // Time
     const elapsedTime = clock.getElapsedTime()
+
+     // Real time environment map
+    if(holyDonut)
+    {
+        holyDonut.rotation.x = Math.sin(elapsedTime) * 2
+        cubeCamera.update(renderer, scene)
+    }
 
     // Update controls
     controls.update()
