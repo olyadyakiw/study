@@ -1,8 +1,11 @@
 uniform vec2 uResolution;
 uniform float uSize;
 uniform float uProgress;
+uniform vec3 uColorA;
+uniform vec3 uColorB;
 
 attribute vec3 aPositionTarget;
+attribute float aSize;
 
 varying vec3 vColor;
 
@@ -15,6 +18,8 @@ void main()
     float noiseTarget = simplexNoise3d(aPositionTarget * 0.2);
     float noise = mix(noiseOrigin, noiseTarget, uProgress);
     noise = smoothstep(-1.0, 1.0, noise);
+
+    
 
     float duration = 0.4;
     float delay = (1.0 - duration) * noise;
@@ -30,9 +35,9 @@ void main()
     gl_Position = projectedPosition;
 
     // Point size
-    gl_PointSize = uSize * uResolution.y;
+    gl_PointSize = aSize * uSize * uResolution.y;
     gl_PointSize *= (1.0 / - viewPosition.z);
 
     // Varyings
-    vColor = vec3(noise);
+    vColor = mix(uColorA, uColorB, noise);
 }
