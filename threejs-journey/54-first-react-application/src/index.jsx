@@ -9,6 +9,9 @@ const toto = 'there'
 
 root.render(
     <div>
-       <App />
+       <App>
+            <h1>React</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, quidem?</p>
+       </App>
     </div>
 )
