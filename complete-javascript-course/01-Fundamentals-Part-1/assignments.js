@@ -1,15 +1,13 @@
-// let country = 'Ukraine'
+let country = 'Ukraine'
 // const continent = 'Europe'
-// let population = 40
+let population = 40
 
 // console.log(country, continent, population)
 
 // const isIsland = false
-// let language
+// let language = 'ukranian'
 
 // console.log(isIsland, population, country, language)
-
-// language = 'ukranian'
 
 // console.log(population / 2)
 // population++
@@ -47,3 +45,28 @@
 // } else {
 //     console.log(`${country} does not meet your criteria :(`)
 // }
+
+
+// switch(language) {
+//     case 'chinese':
+//     case 'mandarin':
+//         console.log('MOST number of native speakers!')
+//         break
+//     case 'spanish':
+//         console.log('2nd place in number of native speakers')
+//         break
+//     case 'english':
+//         console.log('3rd place')
+//         break
+//     case 'hindi':
+//         console.log('number 4')
+//         break
+//     case 'arabic':
+//         console.log('5th most spoken language')
+//         break
+//     default: 
+//         console.log('Great language too :D')
+// }
+
+// const res = population > 33 ? `${country}'s population is above average` : `${country}'s population is below average`
+// console.log(res)

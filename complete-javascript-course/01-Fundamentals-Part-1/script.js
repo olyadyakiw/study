@@ -193,3 +193,52 @@
 // } else {
 //     console.log('❌')
 // }
+
+// const day = 'monday'
+
+// switch(day) {
+//     case 'monday':
+//         console.log('Plan my course structure')
+//         console.log('Go to coding meetup')
+//         break
+//     case 'tuesday':
+//         console.log('prepare theory videos')
+//         break
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('write code examples')
+//         break
+//     case 'friday':
+//         console.log('record videos')
+//         break
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('rest')
+//         break
+//     default: 
+//         console.log('not a valid day')
+// }
+
+// if(day === 'monday') {
+//     console.log('Plan my course structure')
+//     console.log('Go to coding meetup')
+// } else if(day === 'tuesday') {
+//      console.log('prepare theory videos')
+// } else if(day === 'wednesday' || day === 'thursday') {
+//     console.log('write code examples')
+// } else if(day === 'friday') {
+//     console.log('record videos')
+// } else if(day === 'saturday' || day === 'sunday') {
+//     console.log('rest')
+// }
+
+// if( 23 > 10 ) {
+//     const str = 'str'
+// }
+
+// const age = 23
+// age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water')
+// const string = age >= 18 ? 'wine' : 'water'
+// console.log(string)
+
+// console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`)
