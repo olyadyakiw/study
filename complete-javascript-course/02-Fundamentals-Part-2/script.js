@@ -92,3 +92,65 @@
 
 // console.log(yearsUntilRetirement(1998, 'Olha'))
 // console.log(yearsUntilRetirement(1970, 'Mike'))
+
+
+// const friend1 = 'Michael'
+// const friend2 = 'Steven'
+// const friend3 = 'Peter'
+
+// const friends = [ 'Michael', 'Steven', 'Peter' ]
+// console.log(friends)
+
+// // const years = new Array(1991, 2020, 2030)
+
+// console.log(friends[0])
+// console.log(friends[2])
+
+// console.log(friends.length)
+// console.log(friends[friends.length - 1])
+
+// friends[2] = 'Jane'
+// console.log(friends)
+
+// // friends = [ 'Alice', 'Bob' ]
+// const firstName = 'olya'
+// const olya = [ firstName, 'diakiv', 2037-1998, 'programmer', friends ]
+// console.log(olya)
+
+// const calcAge2 = function(birthYear) {
+//     return 2037 - birthYear
+// }
+
+// const years = [ 1969, 1975, 1998, 2005, 2020, 2030 ]
+
+// const age1 = calcAge2(years[0])
+// const age2 = calcAge2(years[1])
+// const age3 = calcAge2(years[years.length - 1])
+
+// const ages = [age1, age2, age3]
+// console.log(ages)
+
+// const friends = [ 'Michael', 'Steven', 'Peter' ]
+// const newLength = friends.push('Sasha')
+// console.log(newLength)
+// console.log(friends)
+
+// friends.unshift('John')
+// console.log(friends)
+
+// const popped = friends.pop()
+// console.log(friends)
+// console.log(popped)
+
+// friends.shift()
+// console.log(friends)
+
+// friends.push(23)
+// console.log(friends.indexOf('Steven'))
+// console.log(friends.includes('Steven'))
+// console.log(friends.includes('Bob'))
+// console.log(friends.includes(23))
+
+// if(friends.includes('B')) {
+//     console.log('you have peter')
+// }

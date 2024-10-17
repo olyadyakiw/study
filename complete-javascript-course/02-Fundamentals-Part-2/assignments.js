@@ -26,16 +26,47 @@
 // const america1 = percentageOfWorld2(500)
 // console.log(china1, ukraine1, america1)
 
-const percentageOfWorld3 = population => population / 7900 * 100
+// const percentageOfWorld3 = population => population / 7900 * 100
 
 // const china2 = percentageOfWorld3(1441)
 // const ukraine2 = percentageOfWorld3(40)
 // const america2 = percentageOfWorld3(500)
 // console.log(china2, ukraine2, america2)
 
-const describePopulation = (country, population) => {
-    const percentage = percentageOfWorld3(population)
-    return `${country} has ${population} million people, which is about ${percentage} of the world`
-}
+// const describePopulation = (country, population) => {
+//     const percentage = percentageOfWorld3(population)
+//     return `${country} has ${population} million people, which is about ${percentage} of the world`
+// }
 
-console.log(describePopulation('China', 1441))
+// console.log(describePopulation('China', 1441))
+
+// const populations = [ 40, 1441, 500, 30 ]
+
+// if(populations.length === 4) {
+//     console.log(true)
+// } else {
+//     console.log(false)
+// }
+
+// const percentages = [
+//     percentageOfWorld3(populations[0]),
+//     percentageOfWorld3(populations[1]),
+//     percentageOfWorld3(populations[2]),
+//     percentageOfWorld3(populations[3])
+// ]
+
+// console.log(percentages)
+
+// const neighbours = [ 'Ukraine', 'Russia', 'Belarus' ]
+// console.log(neighbours)
+// neighbours.push('Utopia')
+// console.log(neighbours)
+// neighbours.pop()
+// console.log(neighbours)
+
+// if(!neighbours.includes('Germany')) {
+//     console.log('Probably not a central european country :D')
+// }
+
+// neighbours[neighbours.indexOf('Russia')] = 'Mordor'
+// console.log(neighbours)
