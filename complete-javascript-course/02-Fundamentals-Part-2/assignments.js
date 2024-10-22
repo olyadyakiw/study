@@ -70,3 +70,27 @@
 
 // neighbours[neighbours.indexOf('Russia')] = 'Mordor'
 // console.log(neighbours)
+
+// const myCountry = {
+//     name: 'Ukraine',
+//     population: 40,
+//     capital: 'Kyiv',
+//     language: 'ukrainian',
+//     neighbours: ['Poland', 'Romania', 'Moldova'],
+//     describe: function() {
+//         console.log( `${this.name} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`)
+//     },
+//     checkIsland: function () {
+//         this.isIsland = this.neighbours.length ? false : true
+//     }
+// }
+
+
+// myCountry.describe()
+// myCountry.checkIsland()
+
+// console.log(myCountry)
+
+// myCountry.population += 2
+// myCountry['population'] -= 2
+// console.log( `${myCountry.name} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)

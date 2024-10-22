@@ -154,3 +154,55 @@
 // if(friends.includes('B')) {
 //     console.log('you have peter')
 // }
+
+// const olha = {
+//     firstName: 'Olha',
+//     lastName: 'Diakiv',
+//     age: 2037 - 1998,
+//     job: 'creative developer',
+//     friends: ['john', 'peter', 'jane'],
+// }
+// console.log(olha)
+// console.log(olha.lastName)
+// console.log(olha['lastName'])
+
+// const nameKey = 'Name'
+// console.log(olha['first' + nameKey])
+// console.log(olha['last' + nameKey])
+
+// const interstedIn = prompt('What do you want about Olha?')
+// console.log(olha[interstedIn])
+
+// if(olha[interstedIn]) {
+//     console.log(olha[interstedIn])
+// } else {
+//     console.log('No info')
+// }
+
+// olha.location = 'Poland'
+// olha['twitter'] = '@olyadyakiw'
+// console.log(olha)
+
+// console.log(`${olha.firstName} has ${olha.friends.length} friends and her best friend is ${olha.friends[0]}`)
+
+const olha = {
+    firstName: 'Olha',
+    lastName: 'Diakiv',
+    birthYear: 1998,
+    job: 'creative developer',
+    friends: ['john', 'peter', 'jane'],
+    hasDriversLicense: false,
+
+    calcAge: function() {
+        this.age = 2037 - this.birthYear
+        return this.age
+    },
+    getSummary: function() {
+        console.log(`${this.firstName} is a ${this.calcAge()}-years old ${this.job} and she ${this.hasDriversLicense ? 'has' : 'hasnt'} drivers license`)
+    }
+}
+
+console.log(olha.calcAge())
+// console.log(olha['calcAge']())
+console.log(olha.age)
+console.log(olha.getSummary())
