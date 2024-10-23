@@ -185,24 +185,95 @@
 
 // console.log(`${olha.firstName} has ${olha.friends.length} friends and her best friend is ${olha.friends[0]}`)
 
-const olha = {
-    firstName: 'Olha',
-    lastName: 'Diakiv',
-    birthYear: 1998,
-    job: 'creative developer',
-    friends: ['john', 'peter', 'jane'],
-    hasDriversLicense: false,
+// const olha = {
+//     firstName: 'Olha',
+//     lastName: 'Diakiv',
+//     birthYear: 1998,
+//     job: 'creative developer',
+//     friends: ['john', 'peter', 'jane'],
+//     hasDriversLicense: false,
 
-    calcAge: function() {
-        this.age = 2037 - this.birthYear
-        return this.age
-    },
-    getSummary: function() {
-        console.log(`${this.firstName} is a ${this.calcAge()}-years old ${this.job} and she ${this.hasDriversLicense ? 'has' : 'hasnt'} drivers license`)
-    }
-}
+//     calcAge: function() {
+//         this.age = 2037 - this.birthYear
+//         return this.age
+//     },
+//     getSummary: function() {
+//         console.log(`${this.firstName} is a ${this.calcAge()}-years old ${this.job} and she ${this.hasDriversLicense ? 'has' : 'hasnt'} drivers license`)
+//     }
+// }
 
-console.log(olha.calcAge())
-// console.log(olha['calcAge']())
-console.log(olha.age)
-console.log(olha.getSummary())
+// console.log(olha.calcAge())
+// // console.log(olha['calcAge']())
+// console.log(olha.age)
+// console.log(olha.getSummary())
+
+// for(let rep = 1; rep <= 30; rep++) {
+//     console.log(`rep ${rep}`)
+// }
+
+// const olha = [
+//     'Olha',
+//     'Diakiv',
+//     2037 - 1998,
+//     'creative developer',
+//     ['john', 'peter', 'jane'],
+// ]
+// const types = []
+
+// for(let i = 0; i < olha.length; i++) {
+//     console.log(olha[i], typeof olha[i])
+//     // types[i] = typeof olha[i]
+//     types.push(typeof olha[i])
+// }
+
+// console.log(types)
+
+// const years = [2010, 1998, 1975, 1969]
+// const ages = []
+
+// for(let i = 0; i < years.length; i++) {
+//     ages.push(2037 - years[i])
+// }
+// console.log(ages)
+
+
+// for(let i = 0; i < olha.length; i++) {
+//     if(typeof olha[i] !== 'string') continue
+//     console.log(olha[i], typeof olha[i])
+// }
+
+// for(let i = 0; i < olha.length; i++) {
+//     console.log(olha[i], typeof olha[i])
+//     if(typeof olha[i] === 'number') break
+// }
+
+// const olha = [
+//     'Olha',
+//     'Diakiv',
+//     2037 - 1998,
+//     'creative developer',
+//     ['john', 'peter', 'jane'],
+// ]
+
+// for(let i = olha.length - 1; i > 0; i--) {
+//     console.log(olha[i])
+// }
+
+// for(let ex = 1; ex < 4; ex++) {
+//     console.log(`Starting exersices ${ex}`)
+//     for(let rep = 1; rep < 6; rep++) {
+//         console.log(`Exersice: ${ex} Repetion ${rep}`)
+//     }
+// }
+
+// let rep = 1
+// while (rep <= 10) {
+//     console.log(`Repetion ${rep}`)
+//     rep++
+// }
+
+// let num = 0
+// while(num !== 6) {
+//     num = Math.round(Math.random() * 6)
+//     console.log(num)
+// }

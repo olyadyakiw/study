@@ -94,3 +94,41 @@
 // myCountry.population += 2
 // myCountry['population'] -= 2
 // console.log( `${myCountry.name} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
+
+// for(let i = 1; i <=50; i++) {
+//     console.log(`Voter number ${i} is currently voting`)
+// }
+
+// function percentageOfWorld1(population) {
+//     return population / 7900 * 100
+// }
+
+// const populations = [ 40, 1441, 500, 30 ]
+// const percentages2 = []
+
+// for(let i = 0; i < populations.length; i++) {
+//     percentages2.push(percentageOfWorld1(populations[i]))
+// }
+// console.log(percentages2)
+
+// const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
+
+// for(let i = 0; i < listOfNeighbours.length; i++) {
+//     for(let j = 0; j < listOfNeighbours[i].length; j++) {
+//         console.log(`Neighbour: ${listOfNeighbours[i][j]}`)
+//     }
+// }
+
+function percentageOfWorld1(population) {
+    return population / 7900 * 100
+}
+
+const populations = [ 40, 1441, 500, 30 ]
+const percentages3 = []
+let count = 0
+while(count < populations.length){
+    percentages3.push(percentageOfWorld1(populations[count]))
+    count++
+}
+
+console.log(percentages3)
