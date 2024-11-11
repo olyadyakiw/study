@@ -33,7 +33,44 @@ const restaurant = {
     orderDelivery: function ({ starterIndex = 1, mainIndex = 2, address, time = '20:00' }) {
         console.log(`Order recieved: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time}`)
     },
+    orderPasta: function(ing1, ing2, ing3) {
+        console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}!`)
+    }
 }
+
+// const arr = [ 7, 8, 9 ]
+// const badNewArr = [ 1, 2, 3, arr[0], arr[1], arr[2] ]
+// console.log(badNewArr)
+
+// const goodNewArr = [ 1, 2, 3, ...arr ]
+// console.log(goodNewArr)
+
+// console.log(...goodNewArr)
+
+// const newMenu = [ ...restaurant.mainMenu, 'Gnocci' ]
+// console.log(newMenu)
+
+// const mainMenuCopy = [ ...restaurant.mainMenu ]
+// const menu = [ ...restaurant.mainMenu, ...restaurant.starterMenu ]
+// console.log(menu)
+
+// const str = 'Olha'
+// const letters = [ ...str, ' ', 'S' ]
+// console.log(letters)
+// console.log(...str)
+
+// const ings = [ prompt('What is your ingresients 1?'), prompt('What is your ingresients 2?'), prompt('What is your ingresients 3?') ]
+
+// restaurant.orderPasta(...ings)
+
+// const newRest = { foundedIn: 1998, ...restaurant, founder: 'Olha' }
+// console.log(newRest)
+
+// const restCopy = { ...restaurant }
+// restCopy.name = 'NEW NAME'
+// console.log(restCopy)
+// console.log(restaurant)
+
 
 // restaurant.orderDelivery({
 //     time: '23:30',
@@ -97,3 +134,4 @@ const restaurant = {
 
 // const [p = 1, q = 1, r = 1] = [8, 9]
 // console.log(p, q, r)
+
