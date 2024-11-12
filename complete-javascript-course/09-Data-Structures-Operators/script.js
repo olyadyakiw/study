@@ -35,8 +35,83 @@ const restaurant = {
     },
     orderPasta: function(ing1, ing2, ing3) {
         console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}!`)
-    }
+    },
+    orderPizza: function(mainIng, ...others) {
+         console.log(mainIng)
+         console.log(others)
+    } 
 }
+
+// const rest1 = {
+//     name: 'Carpi',
+//     numGuests: 0
+// }
+// const rest2 = {
+//     name: 'La Pizza',
+//     owner: 'Olha'
+// }
+
+// // rest1.numGuests = rest1.numGuests || 10
+// // rest2.numGuests = rest2.numGuests || 10
+// rest1.numGuests ??= 10
+// rest2.numGuests ??= 10
+// // rest2.owner = rest2.owner && 'Anonymous'
+// rest2.owner &&= 'Anonymous'
+// rest1.owner &&= 'Anonymous'
+// console.log(rest1)
+// console.log(rest2)
+
+
+// console.log('---- or ----')
+// console.log(3 || 'Olha')
+// console.log('' || 'Olha')
+// console.log(true || 0)
+// console.log(undefined || null)
+// console.log(undefined || 0 || undefined || '' || 'hello')
+
+// restaurant.numGuests = 0
+// const guests1 = restaurant.numGuests || 10
+// console.log(guests1)
+// const guests2 = restaurant.numGuests ? restaurant.numGuests : 10
+// console.log(guests2)
+// const guests3 = restaurant.numGuests ?? 10
+// console.log(guests3)
+
+
+// console.log('---- and ----')
+// console.log(0 && 'Olha')
+// console.log(7 && 'Olha')
+// console.log('Olha' && 8 && null && 23)
+
+// restaurant.orderPizza && restaurant.orderPizza('cheese')
+
+// const arr = [ 1, 2, ...[ 3, 4 ] ]
+// console.log(arr)
+
+// const [a, b, c, ...others] = [ 1, 2, 3, 4, 5 ]
+// console.log(others)
+
+// const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+// console.log(pizza, risotto, otherFood)
+
+// const { sat, ...weekdays } = restaurant.openingHours
+// console.log(weekdays)
+
+// const add = function(...numbers) {
+//     let count = 0
+//     numbers.forEach(number => count += number)
+//     console.log(count)
+// }
+
+// add(2, 3)
+// add(5, 3, 2)
+// add(5, 3, 2, 4, 5, 6)
+
+// const x = [23, 5, 7]
+// add(...x)
+
+// restaurant.orderPizza('cheese', 'tomato', 'chorizo', 'peperoni')
+// restaurant.orderPizza('cheese')
 
 // const arr = [ 7, 8, 9 ]
 // const badNewArr = [ 1, 2, 3, arr[0], arr[1], arr[2] ]
