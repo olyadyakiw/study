@@ -191,117 +191,54 @@ const books = [
     },
 ]
 
-// 1.1
+// // 1.1
 // const [firstBook, secondBook] = books
-// console.log(firstBook, secondBook)
 
-// 1.2
+// // 1.2
 // const [, , thirdBook] = books
-// console.log(thirdBook)
 
-// 1.3
+// // 1.3
 // const ratings = [
 //     ['rating', 4.19],
 //     ['ratingsCount', 144584],
 // ]
-
 // const [[, rating], [, ratingCount]] = ratings
-// console.log(rating, ratingCount)
 
-// 1.4
+// // 1.4
 // const ratingStars = [63405, 1808]
 // const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars
-// console.log(fiveStarRatings, oneStarRatings, threeStarRatings)
 
 // 2.1
 // const { title, author, ISBN } = books[0]
-// console.log(title, author, ISBN)
 
 // 2.2
-// const { keywords: tags } = books[0]
-// console.log(tags)
+// let { keywords: bookTags } = books[0]
+// console.log(bookTags)
 
 // 2.3
 // const { language, programmingLanguage = 'unknown' } = books[6]
-// console.log(language, programmingLanguage)
 
 // 2.4
 // let bookTitle = 'unknown'
 // let bookAuthor = 'unknown'
-// ;({ title: bookTitle, author: bookAuthor } = books[1])
-// console.log(bookAuthor)
-// console.log(bookTitle)
+
+// ({title: bookTitle, author: bookAuthor} = books[0]);
 
 // 2.5
 // const {
 //     thirdParty: {
-//         goodreads: { rating },
+//         goodreads: { rating: bookRating },
 //     },
 // } = books[0]
-// console.log(rating)
+// console.log(bookRating)
 
 // 2.6
-// function printBookInfo({ title, author, year = 'year unknown' }) {
-//     console.log(`${title} by ${author}, ${year}`)
-// }
+const printBookInfo = function ({ title, author, publicationDate: year = 'year unknown' }) {
+    console.log(`${title} by ${author}, ${year}`)
+}
 
-// printBookInfo(books[0])
-// printBookInfo(books[1])
-// printBookInfo(books[2])
-
-// 3.1
-// const bookAuthors1 = [ ...books[0].author ]
-// const bookAuthors2 = [ ...books[1].author ]
-// console.log(bookAuthors1)
-// console.log(bookAuthors2)
-
-// 3.2
-// function spellWord(word) {
-//     console.log(...word)
-// }
-// spellWord('JavaScript')
-
-// 4.1
-// const [mainKeyword, ...rest] = books[0].keywords
-// console.log(mainKeyword, rest)
-
-// 4.2
-// const { publisher: bookPublisher, ...rest } = books[1]
-// console.log(bookPublisher, rest)
-
-// 4.3
-// function printBookAuthorsCount(title, ...authors) {
-//     console.log(`The book "${title}" has ${authors.length} authors`)
-// }
-// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
-
-// 5.1
-// function hasExamplesInJava(book) {
-//     console.log(book.programmingLanguage === 'Java' || 'no data available')
-// }
-
-// hasExamplesInJava(books[0])
-// hasExamplesInJava(books[1])
-// hasExamplesInJava(books[2])
-// hasExamplesInJava(books[3])
-
-// 5.2
-// books.forEach(book => {
-//     book.onlineContent && console.log(`${book.title} provides online content`)
-// })
-
-// 6.1
-// books.forEach(book => {
-//     book.onlineContent ?? console.log(`${book.title} provides no data about its online content`)
-// })
-
-// 7.1
-// books.forEach(book => {
-//     book.edition ||= 1
-//     console.log(book.edition)
-// })
-
-// 7.2
-// books.forEach(book => {
-//     book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
-// })
+printBookInfo(books[0])
+printBookInfo({
+    title: 'Book title',
+    author: 'Book author',
+})
