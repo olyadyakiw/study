@@ -233,12 +233,63 @@ const books = [
 // console.log(bookRating)
 
 // 2.6
-const printBookInfo = function ({ title, author, publicationDate: year = 'year unknown' }) {
-    console.log(`${title} by ${author}, ${year}`)
-}
+// const printBookInfo = function ({ title, author, publicationDate: year = 'year unknown' }) {
+//     console.log(`${title} by ${author}, ${year}`)
+// }
 
-printBookInfo(books[0])
-printBookInfo({
-    title: 'Book title',
-    author: 'Book author',
-})
+// printBookInfo(books[0])
+// printBookInfo({
+//     title: 'Book title',
+//     author: 'Book author',
+// })
+
+// 3.1
+// const bookAuthors = [...books[0].author, ...books[1].author]
+// console.log(bookAuthors)
+
+// 3.2
+// function spellWord(str) {
+//     console.log(...str)
+// }
+
+// spellWord('Javascript')
+
+// 4.1
+// const [mainKeyword, ...rest] = books[0].keywords
+
+// 4.2
+// const { publisher: bookPublisher, ...restOfTheBook } = books[1]
+// console.log(bookPublisher)
+// console.log(restOfTheBook)
+
+// 4.3
+// function printBookAuthorsCount(title, ...authors) {
+//     console.log(`The book "${title}" has ${authors.length} authors`)
+// }
+
+// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne')
+
+// 5.1
+// function hasExamplesInJava(book) {
+//     return book.programmingLanguage === 'Java' || 'no data available'
+// }
+
+// 5.2
+// books.forEach(book => {
+//     book.onlineContent && console.log(`${book.title}" provides online content`)
+// })
+
+// 6.1
+// books.forEach(book => {
+//     book.onlineContent ?? console.log(`${book.title}" provides no data about its online content`)
+// })
+
+// // 7.1
+// books.forEach(book => {
+//     book.edition ||= 1
+// })
+
+// // 7.2
+// books.forEach(book => {
+//     book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
+// })

@@ -47,3 +47,29 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 
 GOOD LUCK 😀
 */
+
+// const players1 = [...game.players[0]]
+// const players2 = [...game.players[1]]
+
+// const [gk, ...fieldPlayer] = players1
+
+// const allPlayers = [...players1, ...players2]
+// // console.log(allPlayers)
+
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic']
+
+// const { team1, x: draw, team2 } = game.odds
+// // console.log(team1, draw, team2)
+
+// function printGoals(players) {
+//     players.forEach(player => {
+//         game.scored.forEach(score => {
+//             player === score && console.log(player)
+//         })
+//     })
+// }
+
+// printGoals(allPlayers)
+
+// game.odds.team1 > game.odds.team2 && console.log('team 1')
+// game.odds.team2 > game.odds.team1 && console.log('team 2')
