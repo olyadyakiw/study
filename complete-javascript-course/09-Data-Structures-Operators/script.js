@@ -43,6 +43,16 @@ const restaurant = {
     },
 }
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+
+for (const item of menu) {
+    console.log(item)
+}
+
+for (const [num, item] of menu.entries()) {
+    console.log(`${num + 1}: ${item}`)
+}
+
 // const rest1 = {
 //     name: 'Capri',
 //     // numGuests: 20,

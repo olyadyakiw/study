@@ -293,3 +293,28 @@ const books = [
 // books.forEach(book => {
 //     book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
 // })
+
+// 8.1
+// let pageSum = 0
+// for (const book of books) {
+//     pageSum += book.pages
+// }
+// console.log(pageSum)
+
+// 8.2
+// const allAuthors = []
+// for (const book of books) {
+//     if (typeof book.author === 'object') {
+//         for (const author of book.author) {
+//             allAuthors.push(author)
+//         }
+//     } else {
+//         allAuthors.push(book.author)
+//     }
+// }
+// console.log(allAuthors)
+
+// 8.3
+// for (const [id, author] of allAuthors.entries()) {
+//     console.log(`${id + 1}. ${author}`)
+// }
