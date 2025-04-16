@@ -318,3 +318,55 @@ const books = [
 // for (const [id, author] of allAuthors.entries()) {
 //     console.log(`${id + 1}. ${author}`)
 // }
+
+// 9.1
+// const bookData = [
+//     ['title', 'Computer Networking: A Top-Down Approach'],
+//     ['author', ['James F. Kurose', 'Keith W. Ross']],
+//     ['publisher', 'Addison Wesley'],
+// ]
+
+// // Do the rest
+// const newBook = {
+//     [bookData[0][0]]: bookData[0][1],
+//     [bookData[1][0]]: [bookData[1][1][0], bookData[1][1][1]],
+//     [bookData[2][0]]: [bookData[2][1]],
+// }
+// console.log(newBook)
+
+// 9.2
+// const pages = 880
+
+// const newBook2 = {
+//     title: 'The C Programming Language',
+//     author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+//     pages,
+// }
+
+// 10.1
+// const getFirstKeyword = book => {
+//     return book.keywords?.[0]
+// }
+
+// console.log(getFirstKeyword(books[0]))
+
+// 11.1
+// const entries = []
+// for (const key of Object.keys(books[0].thirdParty.goodreads)) {
+//     entries.push([key])
+// }
+// console.log(entries)
+
+// 11.2
+
+// Object.entries(books[0].thirdParty.goodreads).forEach(([key, value]) => {
+//     entries.push([key, value])
+// })
+// console.log(entries)
+
+// 11.3
+// const entries2 = Object.entries(books[0].thirdParty.goodreads);
+
+// 11.4
+// console.log(entries)
+// console.log(entries2)
