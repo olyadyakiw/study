@@ -370,3 +370,147 @@ const books = [
 // 11.4
 // console.log(entries)
 // console.log(entries2)
+
+// 12
+// const allKeywords = []
+// const keywordsSet = new Set()
+
+// for (const book of books) {
+//     for (const keyword of book.keywords) {
+//         keywordsSet.add(keyword)
+//     }
+// }
+// keywordsSet.add('coding')
+// keywordsSet.add('science')
+// keywordsSet.delete('business')
+// keywordsSet.clear()
+
+// allKeywords.push(...keywordsSet)
+// console.log(allKeywords)
+
+
+// 13.1
+// const book = new Map([
+//     ['title', 'Clean Code'],
+//     ['author', 'Robert C. Martin'],
+// ])
+
+// 13.2
+// book.set('pages', 464)
+// console.log(book)
+
+// 13.3
+// const title = book.get('title')
+// const author = book.get('author')
+// console.log(`${title} by ${author}`)
+
+// 13.4
+// console.log(book.size)
+
+// 13.5
+// book.has('author') ? console.log("The author of the book is known") : 0
+
+// 14.1
+// const firstBookMap = new Map(Object.entries(books[0]))
+// console.log(firstBookMap)
+
+// // 14.2
+// for(const [key, value] of firstBookMap) {
+//     if (typeof value === 'number') console.log(key)
+// }
+
+// 15.1
+// console.log(books[0].ISBN[6])
+// console.log(books[0].ISBN[4])
+// console.log(books[0].ISBN[9])
+// console.log(books[0].ISBN[8])
+
+// // 15.2
+// const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing'
+// console.log(quote.indexOf('chess'))
+
+// // 15.3
+// console.log(quote.slice(quote.lastIndexOf(' ') + 1))
+
+// // 15.4
+// const isContributor = (author) => {
+//     author.indexOf('Contributor') !== -1 ? console.log(true) : console.log(false)
+// }
+
+// isContributor('Julie Sussman (Contributor)')
+// isContributor('Robert Sedgewick')
+
+// 16.1
+// const normalizeAuthorName = (name) => {
+//     const normalize = name.toLowerCase().trim()
+//     let n = normalize.slice(0, normalize.indexOf(' ') + 1).trim()
+//     let s = normalize.slice(normalize.indexOf(' '), normalize.indexOf('(')).trim()
+//     n = n[0].toUpperCase() + n.slice(1)
+//     s = s[0].toUpperCase() + s.slice(1)
+//     console.log(n + ' ' + s)
+// }
+
+// normalizeAuthorName('  JuliE sussMan (Contributor)')
+
+// // 16.2
+// const newBookTitle = books[1].title.replace('Programs', 'Software')
+// console.log(newBookTitle)
+
+// 'solo'.contains
+
+// // 16.3
+// const logBookTheme = (title) => {
+//     const normalize = title.toLowerCase()
+//     if(normalize.startsWith('computer')) {
+//         console.log('This book is about computers')
+//     } else if(normalize.includes('algorithms') && normalize.includes('structures')) {
+//         console.log('This book is about algorithms and data structures')
+//     } else if(!normalize.includes('operating') && (normalize.endsWith('system') ||normalize.endsWith('systems') )) {
+//         console.log('This book is about some systems, but definitely not about operating systems')
+//     }
+// }
+
+// logBookTheme(books[0].title)
+// logBookTheme(books[1].title)
+// logBookTheme(books[2].title)
+// logBookTheme(books[3].title)
+
+// 17.1
+// const logBookCategories = categories => {
+//     for(const category of categories.split(';')) {
+//         console.log(category)
+//     }
+// }
+
+// const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics'
+// logBookCategories(bookCategories)
+
+// 17.2
+// const getKeywordsAsString = books => {
+//     const keywords = []
+//     for(const book of books) {
+//         keywords.push(...book.keywords)
+//     }
+//     const result = [...new Set(keywords)].join('; ')
+//     console.log(result)
+// }
+
+// getKeywordsAsString(books)
+
+// 17.3
+// const bookChapters = [
+//     ['The Basics', 14],
+//     ['Sorting', 254],
+//     ['Searching', 372],
+//     ['Graphs', 526],
+//     ['Strings', 706],
+// ]
+
+// const logBookChapters = bookChapters => {
+//     for(const [key, value] of bookChapters) {
+//         console.log(`${key.padEnd(20, '_')} ${value}`)
+//     }
+// }
+
+// logBookChapters(bookChapters)
+
