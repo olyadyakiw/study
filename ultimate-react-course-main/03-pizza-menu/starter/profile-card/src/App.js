@@ -1,5 +1,38 @@
 import './index.css'
 
+const skills = [
+    {
+        skill: 'HTML+CSS',
+        level: 'advanced',
+        color: '#2662EA',
+    },
+    {
+        skill: 'JavaScript',
+        level: 'advanced',
+        color: '#EFD81D',
+    },
+    {
+        skill: 'Web Design',
+        level: 'advanced',
+        color: '#C3DCAF',
+    },
+    {
+        skill: 'Git and GitHub',
+        level: 'intermediate',
+        color: '#E84F33',
+    },
+    {
+        skill: 'React',
+        level: 'advanced',
+        color: '#60DAFB',
+    },
+    {
+        skill: 'Svelte',
+        level: 'beginner',
+        color: '#FF3B00',
+    },
+]
+
 function App() {
     return <ProfileCard />
 }
@@ -38,13 +71,9 @@ const Intro = function () {
 const SkillList = function () {
     return (
         <div className="skill-list">
-            <Skill name="React" color="yellow" emodji="S" />
-            <Skill name="Three.js" color="green" emodji="S" />
-            <Skill name="GSAP" color="blue" emodji="S" />
-            <Skill name="Next.js" color="violet" emodji="M" />
-            <Skill name="Git" color="red" emodji="S" />
-            <Skill name="Blender" color="orange" emodji="S" />
-            <Skill name="After Effects" color="magenta" emodji="S" />
+            {skills.map(skill => {
+                return <Skill name={skill.skill} color={skill.color} emodji={skill.level} />
+            })}
         </div>
     )
 }
@@ -52,7 +81,12 @@ const SkillList = function () {
 const Skill = function (props) {
     return (
         <div style={{ backgroundColor: props.color }} className="skill">
-            {props.name} {props.emodji}
+            {props.name}
+            <span>
+                {props.emodji === 'beginner' && '👶'}
+                {props.emodji === 'intermediate' && '👍'}
+                {props.emodji === 'advanced' && '💪'}
+            </span>
         </div>
     )
 }
